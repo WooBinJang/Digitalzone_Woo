@@ -1,0 +1,200 @@
+.point-board-box {
+  margin-top: 30px;
+  width: 794px;
+  margin-left: 183px;
+  margin-right: 183px;
+  height: 700px;
+}
+
+.point-board-box .table,
+.point-board-box th,
+.point-board-box td {
+  border-bottom: 1px solid #ebebeb;
+  text-align: center;
+  height: 45px;
+  font-size: 11px;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #545147;
+}
+.point-board-box table {
+  margin-top: 20px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.point-board-box th {
+  height: 45px;
+  font-weight: 600px;
+  background-color: #fba92f;
+}
+
+.point-board-box td:nth-child(2):hover {
+  text-decoration: underline;
+}
+
+.point-board-box input[type="date"] {
+  position: relative;
+  padding-left: 10px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  border: 1px solid #ddd;
+  height: 28px;
+  width: 124px;
+  font-size: 10px;
+}
+
+.point-board-box input[type="date"]::-webkit-clear-button,
+.point-board-box input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+.point-board-box input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  z-index: 1;
+}
+
+.point-board-box .input_date_box input::after {
+  position: absolute;
+  top: 44%;
+  right: 6px;
+  content: "";
+  width: 20px;
+  height: 22px;
+  background: #fff url(../../../public/img/simple-line-icons-calender.png)
+    center center / contain;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+.point-board-box .input_date_box input::after:hover {
+  cursor: pointer;
+}
+.point-board-box select {
+  width: 100%;
+
+  height: 100%;
+
+  text-align: center;
+  /* padding: 0 28px 0 10px; */
+
+  padding-right: 15px;
+  font-size: 12px;
+
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  appearance: none;
+
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.point-board-box select::-ms-expand {
+  display: none; /*for IE10,11*/
+}
+
+.point-board-box .select-wrap {
+  margin-left: 16px;
+  display: inline-block;
+  width: 87.4px;
+  height: 28px;
+
+  border: 1px solid #ccc;
+
+  background: url("../../../public/img/dashicons-arrow-down-alt-2.png")
+    no-repeat 97% 50%/15px auto;
+}
+
+.point-board-select-box {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.point-board-select-box .input_date_box {
+  margin-left: 18px;
+}
+.point-board-select-box .input_date_title {
+  font-weight: bold;
+}
+.point-board-select-box .start-date {
+  margin-left: 18px;
+}
+.point-board-select-box .end-date {
+  margin-left: 4px;
+}
+.point-board-select-box .between-char {
+  margin-left: 4px;
+}
+
+.point-board-select-box .point-refund-select-box {
+  margin-left: 45px;
+  font-weight: bold;
+}
+
+.point-board-search-box {
+  display: inline-block;
+  /* width: 161px; */
+  width: 240px;
+  height: 30px;
+  border: solid 2px #c4c4c4;
+  border-radius: 26px;
+  position: relative;
+  margin-left: 56px;
+}
+.point-board-search-box input {
+  width: 185px;
+  height: 26px;
+  border: none;
+  margin-left: 10px;
+  outline: none;
+}
+.point-board-search-box label {
+  display: block;
+  width: 29px;
+  height: 28px;
+  background: url(../../../public/img/mdi-magnify.png) no-repeat;
+  text-indent: -9999px;
+  position: absolute;
+  right: 6px;
+  top: -2px;
+  cursor: pointer;
+}
+
+.point-board-box #search-btn {
+  margin-left: 13px;
+  width: 94.7px;
+  height: 30px;
+  border-radius: 50px;
+}
+
+.point-board-box .no-result {
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* .approve-board-search-box input {
+  width: 193px;
+  height: 20px;
+  border: none;
+  margin-left: 8px;
+  margin-top: 5px;
+  outline: none;
+}
+.approve-board-search-box label {
+  display: block;
+  width: 29px;
+  height: 29px;
+  background: url(../../../../public/img/mdi-magnify.png) no-repeat;
+  text-indent: -9999px;
+  position: absolute;
+  right: 2px;
+  top: -1px;
+  cursor: pointer;
+} */

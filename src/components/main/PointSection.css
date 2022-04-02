@@ -1,0 +1,100 @@
+/* PointSection */
+.point-section {
+  padding: 128px 0 200px 0;
+  background: linear-gradient(
+    360deg,
+    #ebebeb 0%,
+    #ebebeb 30.3%,
+    #fff 30.3%,
+    #fff 100%
+  );
+}
+
+.point-title {
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
+  color: #545147;
+  margin-bottom: 40px;
+}
+
+.point-title span {
+  color: #fba92f;
+}
+
+.point-des {
+  margin: auto;
+
+  font-size: 25px;
+  text-align: left;
+  margin-left: 150px;
+  color: #545147;
+  line-height: 1.5;
+  margin-bottom: 75px;
+  font-weight: 700;
+}
+.point-des > span {
+  color: #9a9a9a;
+}
+.point-content-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.point-content-detail-box {
+  width: 265px;
+}
+
+.point-content-total-box {
+  box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+}
+
+.point-content-step {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: left;
+  color: #fba92f;
+  margin-bottom: 20px;
+}
+
+.point-img-box {
+  position: relative;
+  background-color: #ffd850;
+  height: 306px;
+  border-radius: 10px 10px 0 0;
+}
+
+.point-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.point-img-des-box {
+  position: relative;
+  background-color: #ffffff;
+  height: 135px;
+  border-radius: 0 0 10px 10px;
+}
+
+.point-img-des {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 230px;
+  font-size: 15px;
+  text-align: center;
+  color: #545147;
+  line-height: 1.5;
+}
+.point-img-des.font-small {
+  font-size: 13px;
+}
+
+.point-content-detail-box-down {
+  margin-top: 47px;
+}
+
+/* PointSection 끝 */

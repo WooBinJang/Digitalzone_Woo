@@ -1,0 +1,57 @@
+.select {
+  width: 794px;
+  margin: 100px auto 14px;
+  font-size: 12px;
+  color: #545147;
+  text-align: end;
+}
+.select-one,
+.select-two,
+.select-three {
+  margin-right: 6px;
+  margin-left: 21px;
+}
+
+.qa-table {
+  width: 794px;
+  margin: auto;
+  margin-bottom: 300px;
+  color: #545147;
+  font-size: 12px;
+  text-align: center;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.qa-table th {
+  height: 44px;
+}
+.qa-table td {
+  height: 44px;
+  border-bottom: 1px solid #ebebeb;
+  line-height: 44px;
+}
+#num {
+  width: 67px;
+}
+#name {
+  width: 208.5px;
+}
+#date {
+  width: 188.5px;
+}
+#re-sample {
+  width: 87px;
+}
+#co-sample {
+  width: 87px;
+}
+#state {
+  width: 69.475px;
+}
+#user {
+  width: 49.625px;
+}
+#team {
+  width: 74.125px;
+}

@@ -1,0 +1,69 @@
+.pannelsystem-content {
+  position: relative;
+  width: 794px;
+  margin: 80px auto 0;
+}
+
+.pannelsystem-form {
+  position: absolute;
+  top: -50px;
+  right: 7px;
+}
+#pannelsystem-input {
+  position: relative;
+  width: 239px;
+  height: 32px;
+  border: 2px solid #c4c4c4;
+  border-radius: 40px;
+  color: #545147;
+  font-size: 13px;
+  text-indent: 15px;
+}
+.pannelsystem-input-btn {
+  position: absolute;
+  top: 1px;
+  right: 7px;
+  border: none;
+}
+/* search-btn 입력란 */
+
+.pannelsystem-table {
+  border: none;
+  border-collapse: collapse;
+  width: 794px;
+  margin: 0px auto 30px;
+  text-align: center;
+}
+.pannelsystem-tbody td:nth-child(2):hover {
+  text-decoration: underline;
+}
+.pannelsystem-thead {
+  height: 45px;
+  font-size: 12px;
+  color: #545147;
+  /* background-color: #fba92f; */
+  font-weight: 600;
+  border: none;
+  border-bottom: 1px solid #545147;
+}
+
+table th:first-child {
+  /* border-radius: 20px 0 0 0; */
+  /* background-color: #c98f44; */
+  padding-left: 10px;
+}
+.pannelsystem-tbody {
+  height: 44px;
+  font-size: 12px;
+  color: #545147;
+  border: none;
+}
+.pannelsystem-tbody tr {
+  /* border-top: 1px solid #ebebeb; */
+}
+
+.pannelsystem-tbody a {
+  line-height: 44px;
+}
+
+/* table 란 */

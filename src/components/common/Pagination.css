@@ -1,0 +1,27 @@
+.pagination-ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  position: relative;
+  align-items: center;
+}
+.pagination-ul .pagination-item {
+  margin-right: 12px;
+  margin-left: 12px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.pagination-list-next {
+  transform: rotate(180deg);
+}
+.pagination-list-next {
+  cursor: pointer;
+}
+.pagination-list-previous {
+  cursor: pointer;
+}
+
+.pagination-color {
+  color: #fba92f;
+}

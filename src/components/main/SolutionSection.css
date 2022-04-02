@@ -1,0 +1,42 @@
+/* SolutionSection */
+.solution-section {
+  padding: 140px 0 140px 0;
+}
+
+.solution-title {
+  font-size: 48px;
+  font-weight: 600;
+  color: #423c3c;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.solution-title > span {
+  color: #fba92f;
+}
+.solution-des {
+  font-weight: 500;
+
+  font-size: 25px;
+  letter-spacing: -1.5px;
+  text-align: center;
+  color: #363533;
+  margin-bottom: 55px;
+}
+
+.solution-btn {
+  display: block;
+
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+  width: 375px;
+  height: 83px;
+  margin: auto;
+  border-radius: 50px;
+  background-color: #353c44;
+  box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+/* SolutionSection 끝*/

@@ -1,0 +1,80 @@
+.menu-nav {
+  width: 1200px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.menu-nav > ul > li {
+  font-size: 20px;
+  font-weight: 600;
+  color: #545147;
+  cursor: pointer;
+}
+
+.menu-nav > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu-nav > ul > li {
+  position: relative;
+  margin: 30px 25px;
+}
+.menu-nav > ul > li::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 1px;
+  height: 20px;
+  background-color: #545147;
+  top: 50%;
+  right: -25px;
+  transform: translate(-50%, -50%);
+}
+.menu-nav > ul > li:last-child::after {
+  content: none;
+}
+
+.menu-nav > ul > li.on {
+  color: #fba92f;
+}
+.menu-nav > ul > li:hover {
+  color: #fba92f;
+}
+.menu-nav > ul > li > a:hover {
+  color: #fba92f;
+}
+
+.menu-nav .total-manege-box {
+  position: relative;
+}
+.menu-nav .total-manege-box:hover > ul {
+  display: block;
+}
+
+.menu-nav .total-manage-list {
+  position: absolute;
+  display: none;
+  padding-top: 14px;
+  width: 200px;
+  height: 33px;
+  color: #545147;
+}
+
+.menu-nav .total-manage-list li {
+  width: 168px;
+  height: 34px;
+  font-size: 16px;
+  line-height: 34px;
+  font-weight: 600;
+  text-align: left;
+  text-indent: 9px;
+}
+
+.menu-nav .total-manage-list li:hover {
+  color: #fba92f;
+  background-color: #fff;
+}
+
+.menu-nav .total-manage-box:hover .total-manage-list {
+  display: block;
+}

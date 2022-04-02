@@ -1,0 +1,99 @@
+.survey-registration-btn {
+  width: 96px;
+  height: 36px;
+  margin-right: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+.inner-800 {
+  width: 800px;
+  margin: auto;
+}
+
+.survey-send-btn {
+  width: 96px;
+  height: 36px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.survey-top-box {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.survey-input-box {
+  position: relative;
+}
+.survey-input-box .survey-input {
+  width: 240px;
+  height: 36px;
+  border-radius: 40px;
+  padding: 10px 40px 10px 20px;
+  border: solid 2px #c4c4c4;
+}
+
+.survey-input-box .survey-input-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  border: none;
+  transform: translateY(-50%);
+}
+
+.survey-table {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 23px;
+  border-collapse: collapse;
+  font-size: 12px;
+  color: #545147;
+}
+
+.survey-table th,
+.survey-table td {
+  height: 44px;
+}
+
+.survey-table td:nth-child(3):hover {
+  text-decoration: underline;
+}
+
+.survey-table #surveyChoice {
+  width: 40px;
+}
+
+.survey-table #surveyNum {
+  width: 45px;
+}
+.survey-table #surveyName {
+  width: 160px;
+}
+
+.survey-table #surveyRequestDate {
+  width: 145px;
+}
+
+.survey-table #surveyNeedSample {
+  width: 65px;
+}
+.survey-table #surveyCompleteSample {
+  width: 65px;
+}
+
+.survey-table #surveyStatus {
+  width: 65px;
+}
+
+.survey-table #surveyRegister {
+  width: 65px;
+}
+
+.survey-table #surveyClass {
+  width: 65px;
+}

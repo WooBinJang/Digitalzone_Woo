@@ -1,0 +1,101 @@
+.manage-box {
+  display: flex;
+  margin-top: 21.7px;
+  margin-bottom: 20px;
+}
+.account-manage-list {
+  width: 230px;
+  height: 350px;
+  border: solid 1px #c4c4c4;
+}
+.search-box {
+  height: 80px;
+}
+#testId2,
+#testId3 {
+  display: none;
+}
+.account-info-area {
+  margin-left: 38.8px;
+}
+.account-info-area input {
+  text-indent: 7px;
+}
+.account-info-area label {
+  width: 105px;
+  height: 59px;
+  line-height: 59px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.account-manage-info input {
+  width: 315.5px;
+}
+#searchBox {
+  width: 205px;
+  height: 32px;
+  margin: 22px 12px 24px;
+  border-radius: 39.8px;
+  border: solid 1px #c4c4c4;
+  font-size: 12px;
+  text-indent: 15px;
+}
+#searchIcon {
+  text-indent: -9999px;
+  background-image: url(../../images/mdi-magnify.png);
+  width: 17.5px;
+  height: 17.5px;
+  border: none;
+  display: flex;
+  position: relative;
+  top: -50px;
+  right: -185px;
+  cursor: pointer;
+}
+.name-list {
+  width: 215px;
+  height: 240px;
+  overflow: auto;
+}
+.name-list li {
+  font-size: 14px;
+  color: #545147;
+  margin-bottom: 15px;
+  margin-left: 35px;
+  list-style: disc;
+  cursor: pointer;
+}
+.name-list li:hover {
+  font-weight: 600;
+  color: #44423b;
+  text-decoration: underline;
+}
+.name-list li:visited {
+  font-weight: 600;
+  color: #44423b;
+}
+.account-manage-btn {
+  margin-top: 31.1px;
+  margin-bottom: 88px;
+  width: 138px;
+  height: 44px;
+  background-color: #353c44;
+  border-radius: 34.7px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 44px;
+  cursor: pointer;
+}
+#accountDelBtn {
+  margin-right: 19px;
+}
+#accountCallNum1,
+#accountCallNum2,
+#accountCallNum3 {
+  width: 94px;
+}
+#coLabel {
+  margin-right: 80px;
+}

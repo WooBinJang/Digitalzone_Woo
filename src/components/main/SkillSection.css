@@ -1,0 +1,50 @@
+/* SkillSection */
+.skill-section {
+  background-color: #fba92f;
+  padding: 120px 0;
+}
+.skill-title {
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 80px;
+}
+.skill-content-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.skill-content-des-box {
+  width: 520px;
+  height: 370px;
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 10px;
+  border-radius: 20px 50px;
+  padding-left: 50px;
+  padding-top: 78px;
+}
+
+.skill-content-img {
+  margin-bottom: 35px;
+}
+
+.skill-content-title {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: left;
+  color: #545147;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.skill-content-des {
+  font-size: 18px;
+  text-align: left;
+  color: #545147;
+  line-height: 1.3;
+}
+
+/* SkillSection 끝 */

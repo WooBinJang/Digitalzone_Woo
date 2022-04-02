@@ -1,0 +1,71 @@
+.findPw-form-area{
+    width: 280px;
+    margin: 0 auto;
+}
+
+.findPw-form-area li{
+    margin-bottom: 24px;
+    display: flex; flex-direction: column;
+}
+
+.findPw-form-area li label{
+    margin-bottom: 12px;
+}
+
+.findPw-form-area input{
+    height: 27px;
+    font-size: 12px;
+    text-indent: 5px;
+}
+
+.findPw-form-area button{
+    cursor: pointer;
+}
+
+.findPw-cellNum-box{
+    display: flex;
+    position: relative;
+}
+
+#findPwCellNum1{
+    width: 90px;
+    margin-right: 5px;
+}
+#findPwCellNum2{
+    width: 90px;
+    margin-right: 5px;
+}
+#findPwCellNum3{
+    width: 90px;
+}
+
+.findPw-btn-send-certifyNum{
+    position: absolute; top: 0px; right: -110px;
+    width: 105px; height: 27px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.findPw-certify-box{
+    position: relative;
+    width: 280px;
+}
+
+#findPwCertifyNum{
+    width: 280px;
+}
+
+.findPw-btn-confirm{
+    position: absolute; top: 0; right: -70px;
+    width: 65px; height: 27px;
+}
+
+.findPw-btn-box{
+    width: 280px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.findPw-btn-id-send{
+    margin-right: 10px;
+}

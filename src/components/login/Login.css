@@ -1,0 +1,50 @@
+.login-form-area{
+    width: 280px;
+    margin: 0 auto;
+}
+
+.login-form-area li{
+    margin-bottom: 24px;
+    display: flex; flex-direction: column;
+}
+
+.login-form-area li label{
+    margin-bottom: 12px;
+}
+
+.login-form-area input{
+    height: 27px;
+    font-size: 12px;
+    text-indent: 5px;
+}
+
+.login-form-area button{
+    cursor: pointer;
+}
+
+.login-btn-box{
+    width: 280px;
+    text-align: right;
+    margin: 0 auto;
+}
+
+.login-btn-log-in{
+    width: 110px; height: 30px;
+}
+
+.login-link-box{
+    display: flex; justify-content: space-between;
+    width: 280px;
+    text-align: center;
+    margin: 60px auto 30px;
+}
+
+.login-btn-panelBox button{
+    cursor: pointer;
+}
+
+.login-btn-panel-register{
+    display: block;
+    width: 285px; height: 45px;
+    margin: 0 auto;
+}

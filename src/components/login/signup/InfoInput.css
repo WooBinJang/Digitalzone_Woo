@@ -1,0 +1,188 @@
+#registerTitle {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.registerPer {
+  width: 691.3px;
+  border-top: 2px solid #545147;
+}
+.registerBox input {
+  text-indent: 7px;
+}
+.emailBox {
+  border-bottom: 2px solid #545147;
+}
+.registerPer input,
+.registerPer button {
+  margin-left: 15.3px;
+}
+.perInfo label {
+  display: inline-block;
+  height: 60px;
+  width: 127px;
+  background-color: #ebebeb;
+  font-size: 12px;
+  font-weight: 600;
+  color: #545147;
+  line-height: 60px;
+  padding-left: 19px;
+}
+.perInfo input {
+  width: 335.9px;
+  height: 28px;
+  border: solid 1px #c4c4c4;
+}
+
+.idBox button {
+  background-color: #fba92f;
+  font-size: 12px;
+  padding: 10px;
+  border: none;
+}
+.callBox button {
+  background-color: #fba92f;
+  font-size: 12px;
+  padding: 10px;
+  border: none;
+}
+.numInput button {
+  background-color: #fba92f;
+  font-size: 12px;
+  padding: 10px;
+  border: none;
+}
+.emailBox button {
+  background-color: #fba92f;
+  font-size: 12px;
+  padding: 10px;
+  border: none;
+}
+.eyesIcon {
+  background-image: url(../../../images/fluent-eye-24-filled.png);
+  font-size: 0;
+  text-indent: -9999px;
+  width: 36px;
+  height: 36px;
+  background-color: none;
+  padding: 0;
+  border: none;
+}
+#checkMbs {
+  display: flex;
+  height: 60px;
+  width: 127px;
+  background-color: #ebebeb;
+  font-size: 12px;
+  font-weight: 600;
+  color: #545147;
+  line-height: 60px;
+  padding-left: 19px;
+}
+.membership {
+  display: flex;
+  align-items: center;
+  border-bottom: 0.7px solid #c4c4c4;
+  /* border-bottom: 0.7px solid blue; */
+}
+.membership button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+#transferGuideBtn {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 2px 7px;
+  background-color: #c4c4c4;
+  border-radius: 100%;
+  color: #ffffff;
+  font-size: 15px;
+}
+.historyBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 37px;
+  margin-bottom: 50px;
+}
+.historyBtn button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+#backBtn {
+  background-color: #ebebeb;
+  padding: 13px 31px;
+  border-radius: 34.7px;
+  color: #545147;
+  margin-right: 40px;
+}
+#joinBtn {
+  background-color: #353c44;
+  padding: 13px 38px;
+  border-radius: 34.7px;
+  color: #fff;
+}
+.idBox {
+  border-bottom: 0.7px solid #c4c4c4;
+}
+.userNameBox {
+  border-bottom: 0.7px solid #c4c4c4;
+}
+.pwBox {
+  border-bottom: 0.7px solid #c4c4c4;
+}
+.pwCheckBox {
+  border-bottom: 0.7px solid #c4c4c4;
+}
+.callBox {
+  border-bottom: 0.7px solid #c4c4c4;
+}
+.numInput {
+  border-bottom: 0.7px solid #c4c4c4;
+}
+
+.corName label {
+  display: inline-block;
+  height: 60px;
+  width: 127px;
+  background-color: #ebebeb;
+  font-size: 12px;
+  font-weight: 600;
+  color: #545147;
+  line-height: 60px;
+  padding-left: 19px;
+}
+.corNum {
+  border-top: 0.7px solid #c4c4c4;
+  border-bottom: 0.7px solid #c4c4c4;
+}
+.corNum label {
+  display: inline-block;
+  height: 60px;
+  width: 127px;
+  background-color: #ebebeb;
+  font-size: 12px;
+  font-weight: 600;
+  color: #545147;
+  line-height: 60px;
+  padding-left: 19px;
+}
+.corNum button {
+  background-color: #fba92f;
+  font-size: 12px;
+  padding: 10px;
+  border: none;
+}
+.corporation input {
+  height: 28px;
+  border: solid 1px #c4c4c4;
+}
+.termsInner button {
+  cursor: pointer;
+}
+
+.perInfo .inifinput-phonenumber {
+  width: 100px;
+}

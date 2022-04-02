@@ -1,0 +1,46 @@
+/* OrderSection */
+.order-section {
+  padding: 100px 0 80px;
+}
+
+.order-title {
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
+  color: #363533;
+  margin-bottom: 100px;
+}
+
+.order-img {
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.order-des-box {
+  display: flex;
+}
+.order-des {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  color: #545147;
+  width: 240px;
+  line-height: 1.3;
+}
+.order-des1 {
+  margin-left: 7px;
+}
+
+.order-des2 {
+  margin-left: 70px;
+}
+
+.order-des3 {
+  margin-left: 60px;
+}
+.order-des4 {
+  margin-left: 60px;
+}
+
+/* OrderSection 끝 */

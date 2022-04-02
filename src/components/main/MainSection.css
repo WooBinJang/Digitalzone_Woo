@@ -1,0 +1,52 @@
+/* MainSection */
+
+.main-section {
+  background: url("/public/img/main_img.png") no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 850px;
+  padding-top: 150px;
+}
+
+.main-section .survey-title {
+  font-size: 48px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.main-contnet-box {
+  display: flex;
+}
+.main-contnet-box-left {
+  padding-top: 75px;
+  width: 850px;
+}
+.survey-subtitle {
+  font-size: 30px;
+  font-weight: bold;
+  color: #545147;
+  margin-bottom: 30px;
+}
+.survey-des {
+  font-size: 23px;
+  color: #545147;
+  line-height: 1.5;
+  margin-bottom: 45px;
+}
+
+.sign-up-btn {
+  text-align: center;
+  width: 250px;
+  height: 80px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: solid 2px #fff;
+  font-size: 30px;
+  font-weight: 500;
+
+  color: #fff;
+  box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+/* MainSection 끝 */

@@ -1,0 +1,183 @@
+.surveyRg {
+  width: 700px;
+  padding-bottom: 20px;
+}
+.surveyRg input {
+  height: 28px;
+  border: 2px solid #ebebeb;
+  text-indent: 5px;
+}
+
+.surveyRg button {
+  cursor: pointer;
+}
+
+.svRg-pageTitle-box {
+  position: relative;
+  border-bottom: 1px solid #545147;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+
+.svRg-pageTitle {
+  text-align: center;
+}
+
+.svRg-btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+}
+
+.svRg-form-box {
+  display: flex;
+  justify-content: center;
+}
+
+.svRg-form-list {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.svRg-form-list label {
+  width: 110px;
+  margin-right: 20px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.svRg-form-list input {
+  margin-right: 15px;
+}
+
+.svRg-label-point {
+  width: 70px;
+}
+
+#svRgFileName {
+  width: 200px;
+  border: none;
+  outline: none;
+  background-color: #c4c4c4;
+  font-size: 12px;
+  text-indent: 5px;
+  word-break: keep-all;
+}
+
+#svRGPanelNum {
+  width: 100px;
+}
+
+#svRgFileRegister {
+  width: 0px;
+  height: 0px;
+  padding: 0;
+  margin: 0;
+}
+
+#svRgFileBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  cursor: pointer;
+  font-size: 12px;
+  height: 30px;
+}
+
+#svRgWave {
+  width: 15px;
+}
+
+.svRg-profile-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.svRg-profile-title {
+  display: flex;
+  align-items: center;
+  width: 110px;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.svRg-profile-steps {
+  margin-right: 20px;
+}
+
+.svRg-options-box {
+  height: 70px;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.svRg-options-box select {
+  margin-right: 5px;
+  height: 28px;
+  border: 1px solid #c4c4c4;
+}
+
+.svRg-optionbtn-box {
+  display: flex;
+  width: 415px;
+  margin-top: 10px;
+  padding-bottom: 6px;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+.svRg-optionbtn-box::-webkit-scrollbar {
+  height: 4px;
+}
+.svRg-optionbtn-box::-webkit-scrollbar-track {
+  background-color: white;
+}
+.svRg-optionbtn-box::-webkit-scrollbar-thumb {
+  box-shadow: inset 106px 106px 110px 116px #c4c4c4;
+}
+.svRg-optionbtn-box .svRg-optionbtn {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: 1px solid #c4c4c4;
+  border-radius: 20px;
+  font-size: 12px;
+  line-height: 30px;
+}
+.svRg-btn-optionRemove {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+#svRgSubmitBtnList {
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.svRg-btn-submit {
+  width: 95px;
+  height: 30px;
+  border-radius: 20px;
+}
+
+#svRgDateFrom::after,
+#svRgDateTo::after {
+  position: absolute;
+  top: 44%;
+  right: 6px;
+  content: "";
+  width: 20px;
+  height: 22px;
+  background: #fff url(../../../public/img/simple-line-icons-calender.png)
+    center center / contain;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+#svRgSurveyTitle, #svRgSurveyUrl{
+  width: 300px;
+}

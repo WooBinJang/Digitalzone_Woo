@@ -1,0 +1,137 @@
+.account-wrapper {
+  width: 690.3px;
+  margin: 0 auto;
+}
+.account-inner {
+  width: 690.3px;
+  margin: 0 auto;
+}
+.account-step-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.account-step {
+  width: 230.1px;
+  height: 42.3px;
+  line-height: 42.3px;
+  border: solid 1px #c4c4c4;
+  font-size: 17px;
+  font-weight: bold;
+  color: #c4c4c4;
+  text-align: center;
+}
+#accountStepEnter {
+  color: #fff;
+  background-color: #fba92f;
+  font-weight: bold;
+}
+.account-change-info {
+  width: 434.6px;
+  margin: 38.8px auto 0px;
+}
+.account-change-info label {
+  width: 97.1px;
+  height: 59px;
+  line-height: 59px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.account-change-info input {
+  text-indent: 7px;
+}
+#accountCallNum1,
+#accountCallNum2,
+#accountCallNum3,
+.account-input,
+#cerInput {
+  height: 28px;
+  margin-top: 15.5px;
+}
+.account-input,
+#cerInput {
+  width: 335.5px;
+}
+#accountCallNum1,
+#accountCallNum2,
+#accountCallNum3 {
+  margin-right: 15.9px;
+  width: 101px;
+}
+#accountCallNum1::-webkit-outer-spin-button,
+#accountCallNum1::-webkit-inner-spin-button,
+#accountCallNum2::-webkit-outer-spin-button,
+#accountCallNum2::-webkit-inner-spin-button,
+#accountCallNum3::-webkit-outer-spin-button,
+#accountCallNum3::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+#accountCallNum3 {
+  margin-right: 0;
+}
+.account-affiliate,
+.account-id,
+.account-password,
+.account-password-check,
+.account-email,
+.account-username,
+.account-call,
+.accountCerBox {
+  display: flex;
+  height: 59px;
+  line-height: 59px;
+}
+#accountCallBtn {
+  display: flex;
+  position: relative;
+  top: -45px;
+  right: -445px;
+  width: 98.4px;
+  height: 30px;
+  background-color: #fba92f;
+  color: #545147;
+  font-size: 14px;
+  text-align: center;
+  line-height: 30px;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+#accountCerBtn {
+  display: flex;
+  position: relative;
+  top: -45px;
+  right: -445px;
+  width: 98.4px;
+  height: 30px;
+  background-color: #fba92f;
+  color: #545147;
+  font-size: 14px;
+  text-align: center;
+  line-height: 30px;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+.account-info {
+  font-size: 13px;
+}
+.account-btn {
+  margin-top: 31.1px;
+  margin-bottom: 60px;
+  width: 138px;
+  height: 44px;
+  background-color: #353c44;
+  border-radius: 34.7px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 44px;
+  cursor: pointer;
+}
+.account-btn-box {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 2px solid #545147;
+}

@@ -1,0 +1,42 @@
+.completeInner{
+    width: 691.3px;
+    margin: 0 auto;
+}
+
+#completeTitle{
+    margin-top: 97px;
+    margin-bottom: 42px;
+    font-size: 25px;
+    color: #545147;
+    font-weight: 600;
+    text-align: center;
+}
+
+.completeContents h2{
+    background-image: url(../../../images/check.png);
+    font-size: 0;
+    text-indent: -9999px;
+    width: 165px;
+    height: 165px;
+    margin: 66.1px auto 56px;
+    
+}
+#mainBtn{
+    background-color: #353c44;
+    padding: 13px 38px;
+    border-radius: 34.7px;
+    color: #fff;
+    text-align: center;
+    
+}
+button{
+    border: none;
+    background: none;
+}
+.completeContents p{
+    font-size: 17px;
+    font-weight: 500;
+    color: #545147;
+    text-align: center;
+    line-height: 40px;
+}

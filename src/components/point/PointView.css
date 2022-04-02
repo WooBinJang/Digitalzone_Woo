@@ -1,0 +1,185 @@
+.pointDetails-box {
+  width: 692px;
+  height: 816px;
+  margin-left: 245px;
+  margin-right: 245px;
+  margin-top: 92px;
+  margin-bottom: 100px;
+  /* padding-top: 70px; */
+  /* overflow: auto; */
+}
+.pointDetails-box .point-details-inner {
+  padding-right: 21px;
+  border: 0.5px solid #ebebeb;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.point-details-wrap {
+  background-color: #fba92f;
+  width: 130px;
+  height: 420px;
+  border-radius: 20px 0 0 20px;
+}
+
+.pointDetails-box .point-section .title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #545147;
+}
+
+.pointDetails-box .title-box {
+  display: inline-block;
+  height: 60px;
+  width: 127px;
+  background-color: #ebebeb;
+  font-size: 12px;
+  font-weight: 600;
+  color: #545147;
+  line-height: 60px;
+  padding-left: 19px;
+}
+
+.pointDetails-box .row {
+  /* display: inline-block; */
+  padding-left: 21px;
+  padding-right: 21px;
+  height: 60px;
+  width: 650px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #545147;
+  line-height: 60px;
+  /* border-bottom: 0.5px solid #c4c4c4; */
+}
+
+.pointDetails-box .row::before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  width: 650px;
+
+  /* border-bottom: 0.5px solid #c4c4c4; */
+}
+.pointDetails-box .row:first-child::before {
+  display: none;
+}
+
+.pointDetails-box .key {
+  display: inline-block;
+  width: 90px;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+.pointDetails-box .value {
+  margin-left: 46px;
+  font-weight: 700;
+}
+
+.pointDetails-box select {
+  width: 100%;
+
+  height: 100%;
+
+  text-align: center;
+  /* padding: 0 28px 0 10px; */
+
+  padding-right: 15px;
+  font-size: 12px;
+
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  appearance: none;
+
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.pointDetails-box select::-ms-expand {
+  display: none; /*for IE10,11*/
+}
+
+.pointDetails-box .select-wrap {
+  margin-left: 16px;
+  display: inline-block;
+  width: 67.4px;
+  height: 28px;
+
+  border: 1px solid #ccc;
+
+  background: url("../../../public/img/dashicons-arrow-down-alt-2.png")
+    no-repeat 97% 50%/15px auto;
+}
+/* 셀렉트 박스 */
+.pointDetails-box .point-board-select-box {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 9px;
+  font-size: 12px;
+}
+
+.pointDetails-box .point-details-select-menu {
+  margin: 22px 0 26px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+/* 메뉴  */
+
+.pointDetails-box .statusTitle {
+  font-size: 12px;
+  height: 26px;
+  line-height: 26px;
+}
+/* 상태 txt */
+
+.pointDetails-box .save-btn,
+.pointDetails-box .list-btn {
+  width: 95px;
+  height: 32px;
+  background-color: #fba92f;
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.pointDetails-box .list-btn {
+  margin-left: 9px;
+}
+.pointDetails-box .save-btn {
+  margin-left: 13px;
+}
+
+.pointDetails-box .status-record-container {
+  margin-left: 5px;
+  margin-top: 17px;
+
+  border: 1px solid #ebebeb;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+.pointDetails-box .status-record-title {
+  font-size: 15px;
+  font-weight: 700;
+  display: block;
+  text-align: center;
+  margin-top: 21px;
+  margin-bottom: 20px;
+}
+.pointDetails-box .record-list {
+  margin-top: 13px;
+  overflow: auto;
+  height: 210px;
+  margin-left: 21px;
+}
+.pointDetails-box .record-list li {
+  font-size: 15px;
+  margin-left: 13px;
+  margin-top: 15px;
+}

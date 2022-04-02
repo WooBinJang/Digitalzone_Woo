@@ -1,0 +1,163 @@
+.postview-wrap {
+  width: 693px;
+  margin: auto;
+  font-size: 13px;
+  color: #545147;
+  text-align: left;
+}
+
+.postview-content {
+  margin: 100px auto 22px;
+  border-radius: 20px;
+  border: 0.5px solid #ebebeb;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.postview-table {
+  width: 693px;
+  height: 266px;
+  border-collapse: collapse;
+}
+
+.table-wrap {
+  background-color: #fba92f;
+  width: 130px;
+  height: 266px;
+  border-radius: 20px 0 0 20px;
+}
+
+.postview-thead,
+.postview-tbody {
+  position: relative;
+}
+
+.postview-thead tr {
+  width: 85px;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 15px;
+  left: 21px;
+  height: 235px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  font-weight: 700;
+}
+.postview-tbody tr {
+  position: absolute;
+  top: 15px;
+  left: 180px;
+  height: 235px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  font-weight: 700;
+  border: none;
+  width: 300px;
+}
+.postview-thead td {
+  position: relative;
+}
+.postview-thead td,
+.postview-tbody td {
+  border: none;
+  height: 0;
+}
+
+.postview-thead td:nth-child(1)::before,
+.postview-thead td:nth-child(2)::before,
+.postview-thead td:nth-child(3)::before,
+.postview-thead td:nth-child(4)::before {
+  top: 28px;
+}
+
+.postview-thead td:last-child::before {
+  display: none;
+}
+
+/* table 부분 */
+
+.postview-btn-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.postview-btn-box p {
+  line-height: 25px;
+  color: #545147;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+#postview-select {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /* padding: 0 28px 0 10px; */
+  padding-right: 15px;
+  font-size: 12px;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  background: transparent;
+}
+#postview-select::-ms-expand {
+  display: none; /*for IE10,11*/
+}
+.select-wrap {
+  margin-left: 13px;
+  display: inline-block;
+  width: 98px;
+  height: 27px;
+  border: 1px solid #ccc;
+  background: url("../../../public/img/dashicons-arrow-down-alt-2.png")
+    no-repeat 97% 50%/15px auto;
+}
+
+.postview-btn {
+  width: 95px;
+  height: 32px;
+  background-color: #fba92f;
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+.back-btn {
+  margin-left: 9px;
+}
+.save-btn {
+  margin-left: 13px;
+}
+/* postview-btn-box 끝 */
+.postview-loglist {
+  margin: 26px 0 100px;
+  font-size: 13px;
+  width: 693px;
+  height: 266px;
+  border-radius: 20px;
+  border: 1px solid #ebebeb;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+.postview-loglist > p {
+  margin-top: 21px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 15px;
+}
+.postview-log {
+  font-size: 15px;
+  overflow: auto;
+  height: 190px;
+  margin-left: 21px;
+}
+
+.postview-log li {
+  margin-top: 15px;
+}

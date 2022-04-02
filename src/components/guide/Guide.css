@@ -1,0 +1,24 @@
+.guide-section-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 50px 0 20px;
+}
+
+.guide-section-list {
+  margin-bottom: 50px;
+}
+
+.guide-section-list li {
+  line-height: 1.5;
+  list-style-type: decimal;
+}
+
+.guide-inner {
+  width: 820px;
+  margin: 30px auto 100px;
+  border: 1px solid #ebebeb;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+  padding-left: 40px;
+}

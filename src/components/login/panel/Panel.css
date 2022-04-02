@@ -1,0 +1,53 @@
+.panel-box{
+    padding-bottom: 100px;
+}
+
+.panel-page-des{
+    margin: 20px auto;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.panel-form-area{
+    width: 280px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+.panel-form-area li{
+    margin-bottom: 24px;
+    display: flex; flex-direction: column;
+}
+
+.panel-form-area li label{
+    margin-bottom: 12px;
+}
+
+.panel-form-area input{
+    height: 27px;
+    font-size: 12px;
+    text-indent: 5px;
+}
+
+.panel-form-area button{
+    cursor: pointer;
+}
+
+.panel-form-area #panelReqContents{
+    height: 100px;
+    text-indent: 5px;
+}
+
+.panel-btn-box{
+    width: 280px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.panel-btn-box button{
+    width: 110px; height: 30px;
+}
+
+.panel-btn-panel-req{
+    margin-right: 10px;
+}

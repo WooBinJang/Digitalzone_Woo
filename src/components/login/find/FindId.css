@@ -1,0 +1,38 @@
+.findId-form-area{
+    width: 280px;
+    margin: 0 auto;
+}
+
+.findId-form-area li{
+    margin-bottom: 24px;
+    display: flex; flex-direction: column;
+}
+
+.findId-form-area li label{
+    margin-bottom: 12px;
+}
+
+.findId-form-area input{
+    height: 27px;
+    font-size: 12px;
+    text-indent: 5px;
+}
+
+.findId-form-area button{
+    cursor: pointer;
+}
+
+.findId-btn-box{
+    width: 280px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.findId-btn-id-send{
+    width: 110px; height: 30px;
+    margin-right: 10px;
+}
+
+.findId-btn-cancel{
+    width: 110px; height: 30px;
+}

@@ -1,0 +1,16 @@
+#accountIdBtn{
+    display: flex;
+    position: relative;
+    top: -280px;
+    right: -450px;
+    width: 98.4px;
+    height: 30px;
+    background-color: #fba92f;
+    color: #545147;
+    font-size: 13.9px;
+    text-align: center;
+    line-height: 30px;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
