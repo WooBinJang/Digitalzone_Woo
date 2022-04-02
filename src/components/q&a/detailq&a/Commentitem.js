@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { userDataStore } from "../../Root";
 
 const CommentItem = ({ onRemove, onEdit, id, content, created_date }) => {
   const new_date = new Date().getTime();
@@ -7,6 +8,8 @@ const CommentItem = ({ onRemove, onEdit, id, content, created_date }) => {
   const [isEdit, setIsEdit] = useState(false);
   const [username, setUsername] = useState(null);
   const toggleIsEdit = () => setIsEdit(!isEdit);
+  const userData = useContext(userDataStore);
+
   const handleClickRemove = () => {
     if (window.confirm(`현재 댓글을 삭제하시겠습니까?`)) {
       onRemove(id);
@@ -31,7 +34,6 @@ const CommentItem = ({ onRemove, onEdit, id, content, created_date }) => {
   };
 
   useEffect(() => {
-    let userData = JSON.parse(sessionStorage.getItem("userData")) || null;
     if (userData) {
       setUsername(userData.username);
     }

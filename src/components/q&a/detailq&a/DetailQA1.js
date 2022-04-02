@@ -1,19 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import CommentEditor from "./Commenteditor";
 import CommentList from "./CommentList";
 import { Link } from "react-router-dom";
 import "./DetailQA.css";
 import { useHistory } from "react-router-dom";
 import Gnb from "../../common/Gnb";
+import { userDataStore } from "../../Root";
 
 const DetailQA1 = ({ location, tableInfo, setTableInfo, user }) => {
   const { currentPage } = location.state;
   const [data, setData] = useState([]);
   const [usergrade, setUsergrade] = useState(false);
   const dataId = useRef(0);
+  const userData = useContext(userDataStore);
 
   useEffect(() => {
-    let userData = JSON.parse(sessionStorage.getItem("userData")) || null;
     if (userData.authority === "1" || userData.authority === "0") {
       setUsergrade(true);
     } else {

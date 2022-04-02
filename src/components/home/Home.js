@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import "./Home.css";
 import Gnb from "../common/Gnb";
 import moment from "moment";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import LoginCheck from "../common/LoginCheck";
 
 function Home({ user, posts }) {
-  const history = useHistory();
   const filterPosts = posts.filter((item) => item.sendStatus === true); // 발송이 된 데이터
   const today = moment().format("YYYY-MM-DD");
   for (let x of filterPosts) {
@@ -22,12 +20,6 @@ function Home({ user, posts }) {
       x.surveySendState = "설문마감";
     }
   }
-  // useEffect(() => {
-  //   let accessToken = JSON.parse(sessionStorage.getItem("accessToken")) || null;
-  //   if (accessToken === null) {
-  //     history.push("/login");
-  //   }
-  // }, []);
 
   const [radioValue, setRadioValue] = useState("설문예정");
   function changeRadioValue(e) {

@@ -93,7 +93,6 @@ function SurveyModify({ posts, setPosts, location, user }) {
 
   const modifyPost = () => {
     let arrPost = [...posts];
-    // const post = arrPost.filter((x) => x.num === params.params.num);
     for (let i = 0; i < arrPost.length; i++) {
       if (i === params.params.num - 1) {
         arrPost.splice(arrPost.length - 1 - i, 1, {

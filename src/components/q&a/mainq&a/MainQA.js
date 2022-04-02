@@ -1,13 +1,17 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import Gnb from "../../common/Gnb";
 import Pagination from "../../common/Pagination";
 import "./MainQA.css";
 import { useHistory } from "react-router-dom";
+import { userDataStore } from "../../Root";
 
 function MainQA({ location, tableInfo, user }) {
   const [username, setUsername] = useState(null);
   const [userDataId, setUserDataId] = useState(null);
+  const tableInputRef = useRef(0);
+
+  const userData = useContext(userDataStore);
 
   const history = useHistory();
   useEffect(() => {
@@ -30,7 +34,6 @@ function MainQA({ location, tableInfo, user }) {
     currentPosts = tmp.slice(indexOfFirst, indexOfLast); // 0 ~ 10 |  10 ~ 20
     return currentPosts;
   }
-  const tableInputRef = useRef(0);
   const tableserachFnc = () => {
     let tmpItems = [...tableInfo];
     const val = tableInputRef.current.value;
@@ -51,18 +54,19 @@ function MainQA({ location, tableInfo, user }) {
   const tableInputClick = () => {
     tableserachFnc();
   };
+
   useEffect(() => {
-    let userData = JSON.parse(sessionStorage.getItem("userData")) || null;
-    if (userData) {
-      setUsername(userData.username);
-      setUserDataId(userData.id);
+    if (userData.state) {
+      setUsername(userData.state.username);
+      setUserDataId(userData.state.id);
     }
-    if (userData.authority === "1" || userData.authority === "0") {
+    if (userData.state.authority === "1" || userData.state.authority === "0") {
       setIsUserChecked(true);
     } else {
       setIsUserChecked(false);
     }
   }, []);
+  console.log(userData.state);
   return (
     <div className="mainqa">
       <Gnb user={user} />
@@ -95,33 +99,33 @@ function MainQA({ location, tableInfo, user }) {
           </tr>
         </thead>
         <tbody>
-          {currentPosts(searchedTables).map(function (a, index) {
+          {currentPosts(searchedTables).map(function (item, index) {
             return (
               <tr key={index}>
-                <td>{a.num}</td>
+                <td>{item.num}</td>
                 <td>
-                  {isUserChecked || a.id === userDataId ? (
+                  {isUserChecked || item.id === userDataId ? (
                     <Link
                       to={{
-                        pathname: `/mainqa/detailqa/${a.num}`,
+                        pathname: `/mainqa/detailqa/${item.num}`,
                         state: {
-                          num: a.num,
-                          title: a.title,
-                          date: a.date,
-                          user: a.user,
-                          content: a.content,
+                          num: item.num,
+                          title: item.title,
+                          date: item.date,
+                          user: item.user,
+                          content: item.content,
                           currentPage: currentPage,
                         },
                       }}
                     >
-                      {a.title}
+                      {item.title}
                     </Link>
                   ) : (
-                    a.title
+                    item.title
                   )}
                 </td>
-                <td>{a.date}</td>
-                <td>{a.user} </td>
+                <td>{item.date}</td>
+                <td>{item.user} </td>
               </tr>
             );
           })}

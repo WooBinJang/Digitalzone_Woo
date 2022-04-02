@@ -17,6 +17,7 @@ const Survey = ({
 }) => {
   const history = useHistory();
   const surveyInputRef = useRef();
+
   const [searchedSurveys, setSearchedSurveys] = useState(AllDataPosts);
   const [surveyRegistModal, setSurveyRegistModal] = useState(false);
   const [surveyModalOpen, surveySetModalOpen] = useState(false);

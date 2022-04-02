@@ -1,10 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import "./SurveyRegist.css";
 import moment from "moment";
+import { userDataStore } from "../Root";
 
 function SurveyRegist({ modalClose, posts, setPosts }) {
   const date = moment().format("YYYY-MM-DD");
-  const [userData, setUserData] = useState({});
+
+  const userData = useContext(userDataStore);
 
   const fileInput = useRef();
   const fileName = useRef();
@@ -127,13 +129,6 @@ function SurveyRegist({ modalClose, posts, setPosts }) {
     alert("설문 등록이 완료되었습니다.");
     modalClose();
   };
-
-  useEffect(() => {
-    let userData = JSON.parse(sessionStorage.getItem("userData")) || null;
-    if (userData) {
-      setUserData(userData);
-    }
-  }, []);
 
   return (
     <div className="surveyRg">

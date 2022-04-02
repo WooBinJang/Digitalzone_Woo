@@ -1,24 +1,27 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./PublishQA.css";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { accessTokenStore, userDataStore } from "../../Root";
 
 function PublishQA({ tableInfo, setTableInfo }) {
   const [publishTitle, setPublishTitle] = useState("");
   const [publishText, setPublishText] = useState("");
   const [username, setUsername] = useState(null);
   const [userDataId, setUserDataId] = useState(null);
+  const userData = useContext(userDataStore);
+  const userToken = useContext(accessTokenStore);
 
   const publishTitleInput = useRef();
   const publishTextInput = useRef();
   const history = useHistory();
   const created_date = new Date();
 
+  console.log(userData);
   useEffect(() => {
-    let userData = JSON.parse(sessionStorage.getItem("userData")) || null;
     if (userData) {
-      setUsername(userData.username);
-      setUserDataId(userData.id);
+      setUsername(userData.state.username);
+      setUserDataId(userData.state.id);
     }
   }, []);
   const publishInfo = () => {
@@ -41,7 +44,6 @@ function PublishQA({ tableInfo, setTableInfo }) {
       history.push("/mainqa");
     }
   };
-
   return (
     <div className="publish-qa">
       <form
