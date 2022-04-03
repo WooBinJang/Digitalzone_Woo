@@ -24,6 +24,9 @@ const SurveyRow = ({
   modifiedDate,
   sendStatus,
   reasons,
+  accountid,
+  phoneNumber,
+  mail,
 }) => {
   return (
     <tr className={activation ? "survey-row-on" : "survey-row-off"}>
@@ -69,6 +72,9 @@ const SurveyRow = ({
               modifiedDate: modifiedDate,
               sendStatus: sendStatus,
               reasons: reasons,
+              accountid: accountid,
+              phoneNumber: phoneNumber,
+              mail: mail,
             },
           }}
         >

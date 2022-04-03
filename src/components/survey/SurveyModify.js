@@ -114,6 +114,9 @@ function SurveyModify({ posts, setPosts, location, user }) {
           modifiedBy: params.params.modifiedBy,
           modifiedDate: params.params.modifiedDate,
           sendStatus: params.params.sendStatus,
+          accountid: params.params.accountid,
+          phoneNumber: params.params.phoneNumber,
+          mail: params.params.mail,
         });
       }
     }
@@ -121,6 +124,7 @@ function SurveyModify({ posts, setPosts, location, user }) {
     alert("수정이 완료되었습니다");
     history.push(`/survey`);
   };
+  console.log(params.params);
   return (
     <div className="surveyModify-box">
       <Gnb user={user} />

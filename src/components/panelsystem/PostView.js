@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./PostView.css";
 import Gnb from "../common/Gnb";
 import moment from "moment";
+import { userDataStore } from "../Root";
 
 const PostView = ({ posts, setPosts, user, location, history }) => {
-  const [username, setUsername] = useState(null);
-
+  const { state } = useContext(userDataStore);
   const { currentPage } = location.state;
   const params = useParams(); //파라미터로 받기 위한 함수
   let no = params.no;
   const postItem = posts.find((item) => {
     return item.number === no;
   });
-
   const [prevState, setPrevState] = useState("");
   const [selectValue, setSelectValue] = useState(postItem.state);
 
@@ -21,7 +20,9 @@ const PostView = ({ posts, setPosts, user, location, history }) => {
   let date = moment().format("YYYY-MM-DD");
   /* 날짜 */
 
-  let recordTxt = `· ${logTime} ${username} 님이 상태를 ${prevState} 에서 ${selectValue} ${
+  let recordTxt = `· ${logTime} ${
+    state.username
+  } 님이 상태를 ${prevState} 에서 ${selectValue} ${
     selectValue === "처리중" ? "으로" : "로"
   } 변경하였습니다.`;
 
@@ -39,7 +40,7 @@ const PostView = ({ posts, setPosts, user, location, history }) => {
         posts.map((item) => {
           if (item.number === no) {
             item.record.unshift(recordTxt);
-            item.statemanager = username;
+            item.statemanager = state.username;
 
             item.state = selectValue;
             item.statedate = date;
@@ -65,13 +66,6 @@ const PostView = ({ posts, setPosts, user, location, history }) => {
     { value: "처리중", name: "처리중" },
     { value: "완료", name: "완료" },
   ];
-
-  useEffect(() => {
-    let userData = JSON.parse(sessionStorage.getItem("userData")) || null;
-    if (userData) {
-      setUsername(userData.username);
-    }
-  }, []);
 
   return (
     <div className="inner_box">

@@ -195,6 +195,9 @@ const Survey = ({
                   modifiedDate={data.modifiedDate}
                   sendStatus={data.sendStatus}
                   reasons={data.reasons}
+                  accountid={data.accountid}
+                  phoneNumber={data.phoneNumber}
+                  mail={data.mail}
                 />
               );
             })}

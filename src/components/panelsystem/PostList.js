@@ -7,7 +7,6 @@ import { useHistory } from "react-router-dom";
 
 const PostList = ({ posts, user, location }) => {
   const history = useHistory();
-
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {

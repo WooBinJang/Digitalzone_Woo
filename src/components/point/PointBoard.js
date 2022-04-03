@@ -36,7 +36,6 @@ const PointBoard = ({ pointItems, setSelectPointItem, user }) => {
 
   function currentPosts(posts) {
     let currentPosts = 0;
-
     currentPosts = posts.slice(indexOfFirst, indexOfLast);
     return currentPosts;
     // 주석
@@ -116,7 +115,6 @@ const PointBoard = ({ pointItems, setSelectPointItem, user }) => {
   return (
     <div className="inner">
       <Gnb user={user} />
-
       <div className="point-board-box">
         <span className="point-board-select-box">
           <span className="input_date_box">
@@ -158,9 +156,6 @@ const PointBoard = ({ pointItems, setSelectPointItem, user }) => {
               검색
             </label>
           </span>
-          {/* <button id="search-btn" onClick={onSearchHandler} className="btn-o">
-            검색
-          </button> */}
         </span>
         <PointList
           pointItems={currentPosts(searchedItems)}

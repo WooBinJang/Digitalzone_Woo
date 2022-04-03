@@ -12,10 +12,10 @@ const DetailQA1 = ({ location, tableInfo, setTableInfo, user }) => {
   const [data, setData] = useState([]);
   const [usergrade, setUsergrade] = useState(false);
   const dataId = useRef(0);
-  const userData = useContext(userDataStore);
+  const { state } = useContext(userDataStore);
 
   useEffect(() => {
-    if (userData.authority === "1" || userData.authority === "0") {
+    if (state.authority === "1" || state.authority === "0") {
       setUsergrade(true);
     } else {
       setUsergrade(false);

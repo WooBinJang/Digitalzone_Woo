@@ -30,12 +30,12 @@ const Panel = ({ setPanelPosts, panelPosts }) => {
     const data = {
       number: String(panelPosts.length + 1),
       name: panelUserName.current.value,
-      phonenumber: panelUserCellNum.current.value,
+      phone: panelUserCellNum.current.value,
       email: panelUserEmail.current.value,
       date: date,
-      statedate: date,
+      statedate: "",
       state: "접수",
-      statemanager: "홍길동",
+      statemanager: "",
       record: [],
       panelContent: panelReqContents.current.value,
     };

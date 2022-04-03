@@ -6,8 +6,7 @@ import { userDataStore } from "../Root";
 function SurveyRegist({ modalClose, posts, setPosts }) {
   const date = moment().format("YYYY-MM-DD");
 
-  const userData = useContext(userDataStore);
-
+  const { state } = useContext(userDataStore);
   const fileInput = useRef();
   const fileName = useRef();
   const panelNum = useRef();
@@ -98,15 +97,15 @@ function SurveyRegist({ modalClose, posts, setPosts }) {
     profile3: [],
     record: [],
     state: "승인대기",
-    registrant: userData.username,
-    affiliation: userData.userco ? userData.userco : "개인",
+    registrant: state.username,
+    affiliation: state.userco ? state.userco : "개인",
     activation: false,
     modifiedBy: "",
     modifiedDate: "",
     sendStatus: false,
-    accountid: userData.accountid,
-    phoneNumber: userData.phoneNumber,
-    mail: userData.mail,
+    accountid: state.accountid,
+    phoneNumber: state.phoneNumber,
+    mail: state.mail,
   };
 
   const setNewPost = (e) => {

@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import moment from "moment";
 import "./ManegePoint.css";
 import Gnb from "../common/Gnb";
+import { userDataStore } from "../Root";
 
 const ManagePoint = ({
   point,
@@ -22,7 +23,7 @@ const ManagePoint = ({
   const [refundAccount, setRefundAccount] = useState("");
   /* 환불계좌번호 input 값 */
 
-  const [userData, setUserData] = useState();
+  const { state } = useContext(userDataStore);
 
   const refundPoint1 = useRef(); //환불 input
   const inputPoint1 = useRef(); //충전 input
@@ -58,10 +59,10 @@ const ManagePoint = ({
     const pDataList = [...pointItems];
     pDataList.unshift({
       id: pDataList.length + 1,
-      companyName: userData.userco,
-      managerName: userData.username,
-      phone: userData.phoneNumber,
-      email: userData.mail,
+      companyName: state.userco,
+      managerName: state.username,
+      phone: state.phoneNumber,
+      email: state.mail,
       pointAmount: refundPoint1.current.value,
       division: "환불신청",
       applyDate: date,
@@ -81,10 +82,10 @@ const ManagePoint = ({
     const pDataList = [...pointItems];
     pDataList.unshift({
       id: pDataList.length + 1,
-      companyName: userData.userco,
-      managerName: userData.username,
-      phone: userData.phoneNumber,
-      email: userData.mail,
+      companyName: state.userco,
+      managerName: state.username,
+      phone: state.phoneNumber,
+      email: state.mail,
       pointAmount: inputPoint1.current.value,
       division: "충전",
       applyDate: date,
@@ -116,12 +117,6 @@ const ManagePoint = ({
   };
   /* 포인트 환불 함수 */
 
-  useEffect(() => {
-    let userData = JSON.parse(sessionStorage.getItem("userData")) || null;
-    if (userData !== null) {
-      setUserData(userData);
-    }
-  }, []);
   return (
     <div className="inner_box Manage-inner">
       <Gnb user={user} />

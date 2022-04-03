@@ -1,8 +1,9 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useContext } from "react";
 import "./PointView.css";
 import Gnb from "../common/Gnb";
 import { Link, useParams, useLocation } from "react-router-dom";
 import moment from "moment";
+import { userDataStore } from "../Root";
 
 const PointView = ({
   pointItems,
@@ -12,6 +13,8 @@ const PointView = ({
   point,
   setPoint,
 }) => {
+  const { state } = useContext(userDataStore);
+
   const location = useLocation();
   const params = useParams();
   const id = Number(params.id);
@@ -33,10 +36,10 @@ const PointView = ({
       return;
     }
     if (prevSelectedValue === "") {
-      recordText = `· ${date}  ${userData.username}님이 상태를  ${selectValue} 로 변경하였습니다. `;
+      recordText = `· ${date}  ${state.username}님이 상태를  ${selectValue} 로 변경하였습니다. `;
     } else {
       recordText = `· ${date}  ${
-        userData.username
+        state.username
       }님이 상태를 ${prevSelectedValue}에서 ${
         selectValue === "처리중" ? `${selectValue} 으로` : `${selectValue} 로`
       }   변경하였습니다. `;
@@ -50,7 +53,7 @@ const PointView = ({
               record: [recordText, ...item.record],
               status: selectValue,
               modifiedDate: now.format("YYYY.MM.DD"),
-              modifiedBy: userData.username,
+              modifiedBy: state.username,
             }
           : item
       )
@@ -71,14 +74,7 @@ const PointView = ({
     setPrevSelectValue(selectValue);
     setSelectValue(e.target.value);
   };
-  const [userData, setUserData] = useState();
 
-  useEffect(() => {
-    let userData = JSON.parse(sessionStorage.getItem("userData")) || null;
-    if (userData !== null) {
-      setUserData(userData);
-    }
-  }, []);
   return (
     <div className="inner">
       <Gnb user={user} />
@@ -88,7 +84,9 @@ const PointView = ({
             <div className="point-details-wrap">
               <div className="row">
                 <span className="key">업체명</span>
-                <span className="value">{pointItem.companyName ? pointItem.companyName : "개인" }</span>
+                <span className="value">
+                  {pointItem.companyName ? pointItem.companyName : "개인"}
+                </span>
               </div>
               <div className="row">
                 <span className="key">담당자명</span>
@@ -165,8 +163,8 @@ const PointView = ({
           <div className="status-record-container">
             <span className="status-record-title">[기록]</span>
             <ul className="record-list">
-              {pointItem.record.map((item) => {
-                return <li>{item}</li>;
+              {pointItem.record.map((item, index) => {
+                return <li key={index}>{item}</li>;
               })}
             </ul>
           </div>

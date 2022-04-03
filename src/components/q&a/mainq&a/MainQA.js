@@ -7,21 +7,9 @@ import { useHistory } from "react-router-dom";
 import { userDataStore } from "../../Root";
 
 function MainQA({ location, tableInfo, user }) {
-  const [username, setUsername] = useState(null);
-  const [userDataId, setUserDataId] = useState(null);
   const tableInputRef = useRef(0);
-
-  const userData = useContext(userDataStore);
-
+  const { state } = useContext(userDataStore);
   const history = useHistory();
-  useEffect(() => {
-    if (location.state === undefined) {
-      setCurrentPage(1);
-    } else {
-      setCurrentPage(location.state.currentPage);
-      history.replace();
-    }
-  }, []);
   const [searchedTables, setSearchedTables] = useState(tableInfo);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 10;
@@ -29,11 +17,26 @@ function MainQA({ location, tableInfo, user }) {
   const indexOfLast = currentPage * postsPerPage;
   const indexOfFirst = indexOfLast - postsPerPage;
 
-  function currentPosts(tmp) {
+  useEffect(() => {
+    if (location.state === undefined) {
+      setCurrentPage(1);
+    } else {
+      setCurrentPage(location.state.currentPage);
+      history.replace();
+    }
+
+    if (state.authority === "1" || state.authority === "0") {
+      setIsUserChecked(true);
+    } else {
+      setIsUserChecked(false);
+    }
+  }, []);
+
+  const currentPosts = (tmp) => {
     let currentPosts = 0;
-    currentPosts = tmp.slice(indexOfFirst, indexOfLast); // 0 ~ 10 |  10 ~ 20
+    currentPosts = tmp.slice(indexOfFirst, indexOfLast);
     return currentPosts;
-  }
+  };
   const tableserachFnc = () => {
     let tmpItems = [...tableInfo];
     const val = tableInputRef.current.value;
@@ -55,18 +58,6 @@ function MainQA({ location, tableInfo, user }) {
     tableserachFnc();
   };
 
-  useEffect(() => {
-    if (userData.state) {
-      setUsername(userData.state.username);
-      setUserDataId(userData.state.id);
-    }
-    if (userData.state.authority === "1" || userData.state.authority === "0") {
-      setIsUserChecked(true);
-    } else {
-      setIsUserChecked(false);
-    }
-  }, []);
-  console.log(userData.state);
   return (
     <div className="mainqa">
       <Gnb user={user} />
@@ -104,7 +95,7 @@ function MainQA({ location, tableInfo, user }) {
               <tr key={index}>
                 <td>{item.num}</td>
                 <td>
-                  {isUserChecked || item.id === userDataId ? (
+                  {isUserChecked || item.id === state.id ? (
                     <Link
                       to={{
                         pathname: `/mainqa/detailqa/${item.num}`,

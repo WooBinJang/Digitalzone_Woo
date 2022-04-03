@@ -1,11 +1,14 @@
-import { React, useEffect, useRef, useState } from "react";
+import { React, useContext, useRef, useState } from "react";
 import { Link, useParams, useLocation } from "react-router-dom";
 import Gnb from "../../common/Gnb";
 import "./ApproveView.css";
 import moment from "moment";
+import { userDataStore } from "../../Root";
+import { numberComma } from "../../../util/NumberComma";
 
 const ApproveView = ({ surveyApproveItems, setPosts, user }) => {
   const params = useParams();
+  const reasonRef = useRef();
   const id = Number(params.id);
   const surveyApproveItem = surveyApproveItems.find((item) => {
     return item.num === id;
@@ -15,6 +18,7 @@ const ApproveView = ({ surveyApproveItems, setPosts, user }) => {
   const [selectValue, setSelectValue] = useState(surveyApproveItem.state);
   const location = useLocation();
   const { currentPage, searchedItems } = location.state;
+  const { state } = useContext(userDataStore);
   const onSaveClick = () => {
     var now = moment();
     var date = now.format("YYYY-MM-DD HH:mm:ss");
@@ -25,10 +29,10 @@ const ApproveView = ({ surveyApproveItems, setPosts, user }) => {
       return;
     }
     if (prevSelectedValue === "") {
-      recordText = `· ${date}  ${userData.username}님이 상태를  ${selectValue} 로 변경하였습니다. `;
+      recordText = `· ${date}  ${state.username}님이 상태를  ${selectValue} 로 변경하였습니다. `;
     } else {
       recordText = `· ${date}  ${
-        userData.username
+        state.username
       }님이 상태를 ${prevSelectedValue}에서 ${
         selectValue === "처리중" ? `${selectValue} 으로` : `${selectValue} 로`
       }   변경하였습니다. `;
@@ -53,16 +57,6 @@ const ApproveView = ({ surveyApproveItems, setPosts, user }) => {
     setPrevSelectValue(selectValue);
     setSelectValue(e.target.value);
   };
-
-  const [userData, setUserData] = useState(null);
-  useEffect(() => {
-    let userData = JSON.parse(sessionStorage.getItem("userData")) || null;
-    if (userData) {
-      setUserData(userData);
-    }
-  }, []);
-
-  const reasonRef = useRef();
 
   return (
     <div className="inner">
@@ -99,14 +93,15 @@ const ApproveView = ({ surveyApproveItems, setPosts, user }) => {
               <ul>
                 <li>· 조사명 : {surveyApproveItem.surveyName}</li>
                 <li>· 설문링크 :{surveyApproveItem.link}</li>
-                <li>· 필요샘플 수 : {surveyApproveItem.needSample}</li>
-                <li>· 참여포인트 : {surveyApproveItem.pointPerPerson} point</li>
-                <li>· 설문기간 : {surveyApproveItem.date}</li>
                 <li>
-                  · 발송패널 수 :
-                  {surveyApproveItem.needSample *
-                    surveyApproveItem.pointPerPerson}
+                  · 필요샘플 수 : {numberComma(surveyApproveItem.needSample)}
                 </li>
+                <li>
+                  · 참여포인트 : {numberComma(surveyApproveItem.pointPerPerson)}
+                  point
+                </li>
+                <li>· 설문기간 : {surveyApproveItem.date}</li>
+                <li>· 발송패널 수 : 8,545건</li>
                 <li>
                   <span>· 설문 프로파일 </span>
                   <span className="survey-profile-container">
@@ -121,7 +116,10 @@ const ApproveView = ({ surveyApproveItems, setPosts, user }) => {
                 </li>
               </ul>
               <span className="payment-point">
-                · 결제 포인트 : 250,0000 point
+                {`· 결제 포인트 : ${numberComma(
+                  surveyApproveItem.needSample *
+                    surveyApproveItem.pointPerPerson
+                )} point`}
               </span>
               <div className="select-container">
                 <ul>
@@ -188,7 +186,6 @@ const ApproveView = ({ surveyApproveItems, setPosts, user }) => {
               {surveyApproveItem.record.map((item) => {
                 return <li>{item}</li>;
               })}
-              {/* </li> */}
             </ul>
           </div>
         </div>

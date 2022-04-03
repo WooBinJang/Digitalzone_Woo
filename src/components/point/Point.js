@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
+import { numberComma } from "../../util/NumberComma";
 const Point = ({ onPointClick, pointItem, currentPage, searchedItems }) => {
   return (
     <tbody key={[pointItem.id]}>
@@ -20,12 +21,12 @@ const Point = ({ onPointClick, pointItem, currentPage, searchedItems }) => {
               },
             }}
           >
-           {pointItem.companyName ? pointItem.companyName : "개인" } 
+            {pointItem.companyName ? pointItem.companyName : "개인"}
           </Link>
         </td>
         <td>{pointItem.phone}</td>
         <td>{pointItem.email}</td>
-        <td>{pointItem.pointAmount}</td>
+        <td>{numberComma(pointItem.pointAmount)}</td>
         <td>{pointItem.division}</td>
         <td>{pointItem.applyDate}</td>
         <td>{pointItem.modifiedDate}</td>

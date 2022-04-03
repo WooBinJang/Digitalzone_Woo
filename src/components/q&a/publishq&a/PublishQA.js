@@ -2,28 +2,17 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import "./PublishQA.css";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { accessTokenStore, userDataStore } from "../../Root";
+import { userDataStore } from "../../Root";
 
 function PublishQA({ tableInfo, setTableInfo }) {
   const [publishTitle, setPublishTitle] = useState("");
   const [publishText, setPublishText] = useState("");
-  const [username, setUsername] = useState(null);
-  const [userDataId, setUserDataId] = useState(null);
-  const userData = useContext(userDataStore);
-  const userToken = useContext(accessTokenStore);
-
   const publishTitleInput = useRef();
   const publishTextInput = useRef();
   const history = useHistory();
   const created_date = new Date();
+  const { state } = useContext(userDataStore);
 
-  console.log(userData);
-  useEffect(() => {
-    if (userData) {
-      setUsername(userData.state.username);
-      setUserDataId(userData.state.id);
-    }
-  }, []);
   const publishInfo = () => {
     if (publishTitle.length < 1) {
       alert("제목을 입력해주세요.");
@@ -32,11 +21,11 @@ function PublishQA({ tableInfo, setTableInfo }) {
     } else {
       const newPublishTitle = [...tableInfo];
       newPublishTitle.unshift({
-        id: userDataId,
+        id: state.id,
         num: tableInfo.length + 1,
         title: publishTitleInput.current.value,
         date: created_date.toLocaleDateString().slice(0, -1),
-        user: username,
+        user: state.username,
         content: publishTextInput.current.value,
       });
       setTableInfo(newPublishTitle);

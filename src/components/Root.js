@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import Footer from "./common/Footer";
 import { Route } from "react-router-dom";
 import Faq from "./faq/Faq";
