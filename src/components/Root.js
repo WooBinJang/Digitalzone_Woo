@@ -37,7 +37,7 @@ import PublishQA from "./q&a/publishq&a/PublishQA";
 import DetailQA1 from "./q&a/detailq&a/DetailQA1";
 
 export const accessTokenStore = createContext({
-  state: {},
+  token: {},
   action: {
     setToken: () => {},
   },
@@ -59,7 +59,7 @@ const Root = () => {
   };
 
   const tokenDatavalue = {
-    state: JSON.parse(sessionStorage.getItem("accessToken")),
+    token: JSON.parse(sessionStorage.getItem("accessToken")),
     action: { setToken },
   };
   useEffect(() => {
@@ -293,7 +293,9 @@ const Root = () => {
           />
           <Route
             path="/accountchange"
-            render={() => <AccountChange user={user} />}
+            render={() => (
+              <AccountChange user={user} setUserData={setUserData} />
+            )}
           />
           <Route
             path="/accountsetup"

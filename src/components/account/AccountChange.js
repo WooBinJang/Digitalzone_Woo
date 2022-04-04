@@ -1,16 +1,18 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import "./AccountChange.css";
 import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
 import Gnb from "../common/Gnb";
 import LoginCheck from "../common/LoginCheck";
+import { accessTokenStore, userDataStore } from "../Root";
 
-const AccountChange = ({ user }) => {
+const AccountChange = ({ user, setUserData }) => {
   const [showcertification, setShowcertification] = useState(false);
   const [userco, setUserco] = useState(null);
   const [accountid, setAccountid] = useState(null);
   const usernameRef = useRef();
-  const [token, setToken] = useState();
+  let { state } = useContext(userDataStore);
+  const { token } = useContext(accessTokenStore);
   const $ = (selector) => {
     return document.querySelector(selector);
   };
@@ -37,7 +39,6 @@ const AccountChange = ({ user }) => {
     inputRefThree.current.disabled = false;
   }
   // 전화번호 설정
-
   const handleSubmit = (e) => {
     const inputValue = (i) => {
       return i.current.value;
@@ -56,62 +57,54 @@ const AccountChange = ({ user }) => {
   // 번호 변경 시 인증번호 함수
 
   useEffect(() => {
-    let userData = JSON.parse(sessionStorage.getItem("userData")) || null;
-    if (userData) {
-      emailCheck.current.value = userData.mail;
-      setUserco(userData.userco);
-      setAccountid(userData.accountid);
-      usernameRef.current.value = userData.username;
-      const phoneNumberArr = userData.phoneNumber.split("-");
-      inputRef.current.value = phoneNumberArr[0];
-      inputRefTwo.current.value = phoneNumberArr[1];
-      inputRefThree.current.value = phoneNumberArr[2];
-    }
+    emailCheck.current.value = state.mail;
+    setUserco(state.userco);
+    setAccountid(state.accountid);
+    usernameRef.current.value = state.username;
+    const phoneNumberArr = state.phoneNumber.split("-");
+    inputRef.current.value = phoneNumberArr[0];
+    inputRefTwo.current.value = phoneNumberArr[1];
+    inputRefThree.current.value = phoneNumberArr[2];
   }, []);
 
-  const createUser = useCallback((token) => {
-    let url = "https://digitalzone1.herokuapp.com/api/user";
-    fetch(url, {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-        "Allow-Control-Access-Origin": "*",
-        Authorization: "Bearer " + token,
-      },
+  const createUser = useCallback(
+    (token) => {
+      let url = "https://digitalzone1.herokuapp.com/api/user";
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+          "Allow-Control-Access-Origin": "*",
+          Authorization: "Bearer " + token,
+        },
 
-      body: JSON.stringify({
-        accountpw: pwValue.current.value,
-        checkpw: pwCheckValue.current.value,
-        username: usernameRef.current.value,
-        mail: emailCheck.current.value,
-        phoneNumber:
-          inputRef.current.value +
-          "-" +
-          inputRefTwo.current.value +
-          "-" +
-          inputRefThree.current.value,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        sessionStorage.removeItem("userData");
-        sessionStorage.setItem("userData", JSON.stringify(res.data.user));
-        alert(res.message);
+        body: JSON.stringify({
+          accountpw: pwValue.current.value,
+          checkpw: pwCheckValue.current.value,
+          username: usernameRef.current.value,
+          mail: emailCheck.current.value,
+          phoneNumber:
+            inputRef.current.value +
+            "-" +
+            inputRefTwo.current.value +
+            "-" +
+            inputRefThree.current.value,
+        }),
       })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  const userDataAuthority = JSON.parse(
-    sessionStorage.getItem("userData")
-  ).authority;
-  useEffect(() => {
-    let accessToken = JSON.parse(sessionStorage.getItem("accessToken")) || null;
-    if (accessToken !== null) {
-      setToken(accessToken);
-    }
-  }, []);
-  // 백엔드 연결
+        .then((res) => res.json())
+        .then((res) => {
+          sessionStorage.removeItem("userData");
+          sessionStorage.setItem("userData", JSON.stringify(res.data.user));
+          setUserData(JSON.parse(sessionStorage.getItem("userData")));
+          alert(res.message);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    [state, token]
+  );
+
   return (
     <div>
       <LoginCheck />
@@ -124,12 +117,12 @@ const AccountChange = ({ user }) => {
                 계정변경
               </p>
             </Link>
-            {userDataAuthority === "2" ? null : (
+            {state.authority === "2" ? null : (
               <Link to="/accountsetup">
                 <p className="account-step">계정생성</p>
               </Link>
             )}
-            {userDataAuthority === "2" ? null : (
+            {state.authority === "2" ? null : (
               <Link to="/accountmanage">
                 <p className="account-step">계정관리</p>
               </Link>

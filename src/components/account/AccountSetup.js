@@ -1,10 +1,11 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useContext, useRef } from "react";
 import "./AccountSetup.css";
 import { Link } from "react-router-dom";
 import Gnb from "../common/Gnb";
-import userData from "../../data/userData";
+import { userDataStore } from "../Root";
 
 const AccountSetup = ({ handleCreate, setUserList, user }) => {
+  const { state } = useContext(userDataStore);
   const $ = (selector) => {
     return document.querySelector(selector);
   };
@@ -39,13 +40,7 @@ const AccountSetup = ({ handleCreate, setUserList, user }) => {
   };
   // 저장버튼 함수
 
-  const [userData, setUserData] = useState(null);
-  useEffect(() => {
-    let userData = JSON.parse(sessionStorage.getItem("userData")) || null;
-    setUserData(userData);
-  }, []);
-
-  const createUser = useCallback((userData) => {
+  const createUser = useCallback((state) => {
     let url = "https://digitalzone1.herokuapp.com/api/auth/signup";
     fetch(url, {
       method: "POST",
@@ -67,8 +62,8 @@ const AccountSetup = ({ handleCreate, setUserList, user }) => {
           inputRefTwo.current.value +
           "-" +
           inputRefThree.current.value,
-        userco: userData.userco,
-        userconum: userData.userconum,
+        userco: state.userco,
+        userconum: state.userconum,
       }),
     })
       .then((res) => res.json())
@@ -125,7 +120,7 @@ const AccountSetup = ({ handleCreate, setUserList, user }) => {
             action="/accountsetup"
             onSubmit={(e) => {
               e.preventDefault();
-              createUser(userData);
+              createUser(state);
             }}
           >
             <div className="account-change-info">
