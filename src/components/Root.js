@@ -52,19 +52,6 @@ export const userDataStore = createContext({
 const Root = () => {
   const [token, setToken] = useState(null);
   const [userData, setUserData] = useState(null);
-
-  const userDatavalue = {
-    state: JSON.parse(sessionStorage.getItem("userData")),
-    action: { setUserData },
-  };
-
-  const tokenDatavalue = {
-    token: JSON.parse(sessionStorage.getItem("accessToken")),
-    action: { setToken },
-  };
-  useEffect(() => {
-    setUserData(JSON.parse(sessionStorage.getItem("userData")));
-  }, []);
   const [selectPointItem, setSelectPointItem] = useState({});
   const [isUserLogin, setIsUserLogin] = useState(false);
   const [pointItems, setPointItems] = useState(pointData);
@@ -79,7 +66,18 @@ const Root = () => {
     grade: 0,
   });
 
+  const userDatavalue = {
+    state: JSON.parse(sessionStorage.getItem("userData")),
+    action: { setUserData },
+  };
+
+  const tokenDatavalue = {
+    token: JSON.parse(sessionStorage.getItem("accessToken")),
+    action: { setToken },
+  };
+
   useEffect(() => {
+    setUserData(JSON.parse(sessionStorage.getItem("userData")));
     let accessToken = JSON.parse(sessionStorage.getItem("accessToken")) || null;
     if (accessToken) {
       setIsUserLogin(true);

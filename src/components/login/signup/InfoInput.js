@@ -344,9 +344,7 @@ const InfoInput = () => {
               </Link>
             </button>
             <button type="submit">
-              {/*  <Link to={'/complete'}> */}
               <h2 id="joinBtn">회원가입</h2>
-              {/*    </Link> */}
             </button>
           </div>
         </form>
