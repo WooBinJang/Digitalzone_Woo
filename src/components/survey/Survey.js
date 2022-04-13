@@ -5,6 +5,7 @@ import Pagination from "../common/Pagination";
 import Modal from "../common/Modal";
 import Gnb from "../common/Gnb";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import LoginCheck from "../common/LoginCheck";
 
 const Survey = ({
   point,
@@ -94,6 +95,7 @@ const Survey = ({
   };
   return (
     <div className="survey-box">
+      <LoginCheck />
       <Gnb user={user} />
       <div className="inner-800">
         {surveyModalOpen && (
