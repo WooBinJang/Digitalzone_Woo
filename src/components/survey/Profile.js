@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LoginCheck from "../common/LoginCheck";
 import "./Profile.css";
 const Profile = ({ params }) => {
   return (
     <div className="profile-box">
+      <LoginCheck />
       <div className="inner-800">
         <div className="profile-main-box">
           <h2 className="profile-title">설문 프로파일</h2>

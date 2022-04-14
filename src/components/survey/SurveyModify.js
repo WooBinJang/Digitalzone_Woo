@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import Gnb from "../common/Gnb";
 import "./SurveyModify.css";
 import moment from "moment";
+import LoginCheck from "../common/LoginCheck";
 
 function SurveyModify({ posts, setPosts, location, user }) {
   const date = moment().format("YYYY-MM-DD");
@@ -128,6 +129,7 @@ function SurveyModify({ posts, setPosts, location, user }) {
   return (
     <div className="surveyModify-box">
       <Gnb user={user} />
+      <LoginCheck />
       <div className="surveyModify">
         <div className="surveyModify-pageTitle-box">
           <h3 className="surveyModify-pageTitle">설문 수정</h3>

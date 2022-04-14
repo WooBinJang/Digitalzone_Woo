@@ -1,6 +1,7 @@
 import React from "react";
 import "./SurveyChart.css";
 import "@toast-ui/chart/dist/toastui-chart.min.css";
+import LoginCheck from "../common/LoginCheck";
 require("@toast-ui/chart/dist/toastui-chart.min.css");
 const toastui = require("@toast-ui/react-chart");
 
@@ -50,6 +51,7 @@ function SurveyChart({ needSample, completeSample }) {
   const BarChart = toastui.PieChart;
   return (
     <div className="survey-chart-box">
+      <LoginCheck />
       <BarChart data={data} options={options} style={containerStyle} />
       <div className="survey-chart-text-box">
         <span className="survey-chart-text1">{`${perData}%`} 응답완료</span>

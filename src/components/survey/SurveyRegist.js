@@ -2,6 +2,7 @@ import React, { useContext, useRef, useState } from "react";
 import "./SurveyRegist.css";
 import moment from "moment";
 import { userDataStore } from "../Root";
+import LoginCheck from "../common/LoginCheck";
 
 function SurveyRegist({ modalClose, posts, setPosts }) {
   const date = moment().format("YYYY-MM-DD");
@@ -131,6 +132,7 @@ function SurveyRegist({ modalClose, posts, setPosts }) {
 
   return (
     <div className="surveyRg">
+      <LoginCheck />
       <div className="svRg-pageTitle-box">
         <h3 className="svRg-pageTitle">신규설문 등록</h3>
         <button className="svRg-btn-close" onClick={modalClose}>

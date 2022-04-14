@@ -1,6 +1,7 @@
 import React from "react";
 import { numberComma } from "../../util/NumberComma";
 import Gnb from "../common/Gnb";
+import LoginCheck from "../common/LoginCheck";
 import Profile from "./Profile";
 import SurveyChart from "./SurveyChart";
 import "./SurveyDetail.css";
@@ -10,7 +11,9 @@ const SurveyDetail = ({ posts, setPosts, location, user }) => {
 
   return (
     <div className="survey-detail-box">
+      <LoginCheck />
       <Gnb user={user} />
+
       <div className="inner-800">
         <h1 className="survey-detail-title">[{params.surveyName}]</h1>
         <h3 className="survey-detail-date">{params.date}</h3>

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { numberComma } from "../../util/NumberComma";
+import LoginCheck from "../common/LoginCheck";
 import "./SurveySendModal.css";
 
 const SurveySendModal = ({
@@ -27,9 +28,9 @@ const SurveySendModal = ({
     }
     setPosts(updatePosts);
   };
-  console.log(point);
   return (
     <div className="SurveySendModal-box">
+      <LoginCheck />
       <div className="SurveySendModal-top-box">
         <h2 className="SurveySendModal-title">설문 전송</h2>
         <div className="SurveySendModal-button" onClick={modalClose}>
