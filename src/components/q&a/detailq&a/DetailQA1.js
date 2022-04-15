@@ -6,6 +6,7 @@ import "./DetailQA.css";
 import { useHistory } from "react-router-dom";
 import Gnb from "../../common/Gnb";
 import { userDataStore } from "../../Root";
+import LoginCheck from "../../common/LoginCheck";
 
 const DetailQA1 = ({ location, tableInfo, setTableInfo, user }) => {
   const { currentPage } = location.state;
@@ -81,6 +82,7 @@ const DetailQA1 = ({ location, tableInfo, setTableInfo, user }) => {
   return (
     <div className="detail-qa">
       <Gnb user={user} />
+      <LoginCheck />
       <div className="table">
         <div className="head-list">
           <div id="item1">{params.num}</div>
