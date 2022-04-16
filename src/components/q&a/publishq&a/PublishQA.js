@@ -3,6 +3,7 @@ import "./PublishQA.css";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { userDataStore } from "../../Root";
+import LoginCheck from "../../common/LoginCheck";
 
 function PublishQA({ tableInfo, setTableInfo }) {
   const [publishTitle, setPublishTitle] = useState("");
@@ -35,6 +36,7 @@ function PublishQA({ tableInfo, setTableInfo }) {
   };
   return (
     <div className="publish-qa">
+      <LoginCheck />
       <form
         onSubmit={(e) => {
           e.preventDefault();

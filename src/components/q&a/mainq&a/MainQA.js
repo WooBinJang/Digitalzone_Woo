@@ -5,6 +5,7 @@ import Pagination from "../../common/Pagination";
 import "./MainQA.css";
 import { useHistory } from "react-router-dom";
 import { userDataStore } from "../../Root";
+import LoginCheck from "../../common/LoginCheck";
 
 function MainQA({ location, tableInfo, user }) {
   const tableInputRef = useRef(0);
@@ -60,6 +61,7 @@ function MainQA({ location, tableInfo, user }) {
 
   return (
     <div className="mainqa">
+      <LoginCheck />
       <Gnb user={user} />
       <div className="btn-head">
         <Link to={{ pathname: "/mainqa/publish" }}>
